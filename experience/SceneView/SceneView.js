@@ -52,40 +52,38 @@ export default class SceneView extends SceneBase {
 
         this.clouds = new Clouds(this.scene)
 
-        this.addTestSphere1();
-
         this.camera.position.x = 3;
 
-        this.addTestSphere2();
+        // this.addTestSphere1();
 
-        this.addTestSphere3();
+        // this.addTestSphere2();
 
-        this.addTestSphere4();
+        // this.addTestSphere3();
 
-
+        // this.addTestSphere4();
+        
         // this.addTestDoor();
 
-        const earth = new Planet({
-            distance: 10,
-            speed: 0.01,
-            size: 2
-        });
+        // const earth = new Planet({
+        //     distance: 10,
+        //     speed: 0.01,
+        //     size: 2
+        // });
 
-        this.scene.add(earth.object);
+        // this.scene.add(earth.object);
 
-        this.planets.push(earth)
+        // this.planets.push(earth)
 
-        const mars = new Planet({
-            distance: 50,
-            speed: 0.005,
-            size: 5,
+        // const mars = new Planet({
+        //     distance: 50,
+        //     speed: 0.005,
+        //     size: 5,
 
-        });
+        // });
 
-        this.scene.add(mars.object)
+        // this.scene.add(mars.object)
 
-        this.planets.push(mars)
-
+        // this.planets.push(mars)
 
 
         // CREATION DU TABLEAU DE PLANETE
@@ -115,137 +113,110 @@ export default class SceneView extends SceneBase {
 
     load() {
 
-
-        // LOAD DE L'OBJET PORTE //
-
-        const loader = new GLTFLoader();
-        loader.load('/assets/object/gltf/gothic/door.gltf', (gltf) => {
-
-            this.scene.add(gltf.scene);
-            gltf.scene.scale.set(20, 20, 20);
-            gltf.scene.rotation.y = 80;
-            gltf.scene.position.y = 30;
-        })
-
-        const clouds = new GLTFLoader();
-        clouds.load('/assets/object/gltf/clouds/clouds.gltf', (gltf) => {
-
-            this.scene.add(gltf.scene);
-            gltf.scene.scale.set(1, -1, 1.5);
-            gltf.scene.rotation.y = 50;
-            gltf.scene.position.y = 30;
-        })
-
     }
-
-
 
     // DECLARATION DE MES ELEMENTS SUR LA MAP
 
-    addTestSphere1() {
+    // addTestSphere1() {
 
-        // L'endroit ou je load mon premier element
+    //     // L'endroit ou je load mon premier element
 
-        const sphereGeometry = new SphereGeometry(3, 10, 40);
-        const sphereMaterial = new MeshStandardMaterial({
-            color: 0xffffff,
+    //     const sphereGeometry = new SphereGeometry(3, 10, 40);
+    //     const sphereMaterial = new MeshStandardMaterial({
+    //         color: 0xffffff,
 
-            wireframe: true
-        });
+    //         wireframe: true
+    //     });
 
-        this.sphereMesh = new Mesh(sphereGeometry, sphereMaterial);
+    //     this.sphereMesh = new Mesh(sphereGeometry, sphereMaterial);
 
-        this.sphereMesh.position.set(20, 30, 50)
+    //     this.sphereMesh.position.set(20, 30, 50)
 
-        this.scene.add(this.sphereMesh);
+    //     this.scene.add(this.sphereMesh);
 
-    }
+    // }
 
-    addTestSphere2() {
+    // addTestSphere2() {
 
-        // L'endroit ou je load mon premier element
+    //     // L'endroit ou je load mon premier element
 
-        const sphereGeometry = new SphereGeometry(6, 20, 60);
-        const sphereMaterial = new MeshStandardMaterial({
-            color: 0xffffff,
+    //     const sphereGeometry = new SphereGeometry(6, 20, 60);
+    //     const sphereMaterial = new MeshStandardMaterial({
+    //         color: 0xffffff,
 
-            wireframe: true
-        });
+    //         wireframe: true
+    //     });
 
-        this.sphereMesh = new Mesh(sphereGeometry, sphereMaterial);
+    //     this.sphereMesh = new Mesh(sphereGeometry, sphereMaterial);
 
-        this.sphereMesh.position.set(-50, 50, 25)
+    //     this.sphereMesh.position.set(-50, 50, 25)
 
-        this.scene.add(this.sphereMesh);
+    //     this.scene.add(this.sphereMesh);
 
-    }
-
-
-    addTestSphere3() {
-
-        // L'endroit ou je load mon premier element
-
-        const sphereGeometry = new SphereGeometry(6, 20, 60);
-        const sphereMaterial = new MeshStandardMaterial({
-            color: 0xffffff,
-
-            wireframe: true
-        });
-
-        this.sphereMesh = new Mesh(sphereGeometry, sphereMaterial);
+    // }
 
 
-        this.sphereMesh.position.set(-20, 20, -25)
+    // addTestSphere3() {
 
-        this.scene.add(this.sphereMesh);
+    //     // L'endroit ou je load mon premier element
 
-    }
+    //     const sphereGeometry = new SphereGeometry(6, 20, 60);
+    //     const sphereMaterial = new MeshStandardMaterial({
+    //         color: 0xffffff,
 
-    addTestSphere4() {
+    //         wireframe: true
+    //     });
 
-        // L'endroit ou je load mon premier element
-
-        const sphereGeometry = new SphereGeometry(6, 20, 60);
-        const sphereMaterial = new MeshStandardMaterial({
-            color: 0xffffff,
-
-            wireframe: true
-        });
-
-        this.sphereMesh = new Mesh(sphereGeometry, sphereMaterial);
-
-        this.sphereMesh.position.set(40, 20, -45)
-
-        this.scene.add(this.sphereMesh);
-
-    }
+    //     this.sphereMesh = new Mesh(sphereGeometry, sphereMaterial);
 
 
+    //     this.sphereMesh.position.set(-20, 20, -25)
 
-    addTestDoor() {
-        const doorGeometry = new PlaneGeometry(20, 30);
-        const doorMaterial = new MeshBasicMaterial({
-            color: 0xffffff,
-            side: DoubleSide,
-            blending: AdditiveBlending,
-            wireframe: true
+    //     this.scene.add(this.sphereMesh);
 
-        });
+    // }
 
-        this.plane = new Mesh(doorGeometry, doorMaterial);
+    // addTestSphere4() {
 
-        this.plane.position.set(5, 30, 5)
+    //     // L'endroit ou je load mon premier element
+
+    //     const sphereGeometry = new SphereGeometry(6, 20, 60);
+    //     const sphereMaterial = new MeshStandardMaterial({
+    //         color: 0xffffff,
+
+    //         wireframe: true
+    //     });
+
+    //     this.sphereMesh = new Mesh(sphereGeometry, sphereMaterial);
+
+    //     this.sphereMesh.position.set(40, 20, -45)
+
+    //     this.scene.add(this.sphereMesh);
+
+    // }
 
 
-        this.scene.add(this.plane);
-    }
+    // addTestDoor() {
+    //     const doorGeometry = new PlaneGeometry(20, 30);
+    //     const doorMaterial = new MeshBasicMaterial({
+    //         color: 0xffffff,
+    //         side: DoubleSide,
+    //         blending: AdditiveBlending,
+    //         wireframe: true
+
+    //     });
+
+    //     this.plane = new Mesh(doorGeometry, doorMaterial);
+
+    //     this.plane.position.set(5, 30, 5)
+
+
+    //     this.scene.add(this.plane);
+    // }
 
     // window.addEventListener('click', () => {
     //     // LE CODE ICI 
     // })
-
-
-    
 
     setupLights() {
         const hemiLight = new HemisphereLight(0xffffff, 0xffffff, 0.1);
@@ -281,16 +252,15 @@ export default class SceneView extends SceneBase {
         // this.scene.add(dirLightHelper);
     }
 
-
-
-
     update() {
         if (this.sphereMesh) {
             this.sphereMesh.position.x += 0.01;
             this.planets.forEach(planet => planet.update());
         }
 
-        
+        if (this.clouds) {
+            this.clouds.update();
+        }
     }
 
 

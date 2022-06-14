@@ -14,7 +14,6 @@ export default class Door {
         const door = new GLTFLoader();
         
         door.load('/assets/object/gltf/gothic/door.gltf', (gltf) => {
-            console.log(gltf)
             this.scene.add(gltf.scene);
             gltf.scene.scale.set(20, 20, 20);
             gltf.scene.rotation.y = 80;
