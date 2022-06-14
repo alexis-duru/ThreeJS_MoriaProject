@@ -18,7 +18,8 @@ import {
 } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 import Planet from '../elements/Planet.js';
-// import Door from '../elements/Door.js';
+import Door from '../elements/Door.js';
+import Clouds from '../elements/Clouds.js';
 
 import SceneBase from './Scene/SceneBase';
 
@@ -47,10 +48,9 @@ export default class SceneView extends SceneBase {
 
         this.planets = []
 
-        // this.door = new Door() 
+        this.door = new Door(this.scene) 
 
-        // this.scene.add(this.door);
-
+        this.clouds = new Clouds(this.scene)
 
         this.addTestSphere1();
 
@@ -81,8 +81,6 @@ export default class SceneView extends SceneBase {
             size: 5,
 
         });
-        
-        // console.log(mars)
 
         this.scene.add(mars.object)
 
@@ -122,7 +120,7 @@ export default class SceneView extends SceneBase {
 
         const loader = new GLTFLoader();
         loader.load('/assets/object/gltf/gothic/door.gltf', (gltf) => {
-            // console.log(gltf)
+
             this.scene.add(gltf.scene);
             gltf.scene.scale.set(20, 20, 20);
             gltf.scene.rotation.y = 80;
@@ -131,34 +129,12 @@ export default class SceneView extends SceneBase {
 
         const clouds = new GLTFLoader();
         clouds.load('/assets/object/gltf/clouds/clouds.gltf', (gltf) => {
-            // console.log(gltf)
+
             this.scene.add(gltf.scene);
             gltf.scene.scale.set(1, -1, 1.5);
             gltf.scene.rotation.y = 50;
             gltf.scene.position.y = 30;
         })
-
-        // const clouds2 = new GLTFLoader();
-        // clouds.load('/assets/object/gltf/clouds/clouds.gltf', (gltf) => {
-        //     // console.log(gltf)
-        //     this.scene.add(gltf.scene);
-        //     gltf.scene.scale.set(1, -0.4, 1.5);
-        //     gltf.scene.rotation.y = 50;
-        //     gltf.scene.position.y = 30;
-        // })
-
-        // const clouds3 = new GLTFLoader();
-        // clouds.load('/assets/object/gltf/clouds/clouds.gltf', (gltf) => {
-        //     // console.log(gltf)
-        //     this.scene.add(gltf.scene);
-        //     gltf.scene.scale.set(1, -0.4, 1.5);
-        //     gltf.scene.rotation.y = 50;
-        //     gltf.scene.position.y = 50;
-        // })
-
-        
-
-
 
     }
 
@@ -179,9 +155,6 @@ export default class SceneView extends SceneBase {
 
         this.sphereMesh = new Mesh(sphereGeometry, sphereMaterial);
 
-        // sphereMesh.position.x = 5;
-        // sphereMesh.position.y= 5;
-        // sphereMesh.position.z= 25
         this.sphereMesh.position.set(20, 30, 50)
 
         this.scene.add(this.sphereMesh);

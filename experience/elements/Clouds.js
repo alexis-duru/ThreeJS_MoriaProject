@@ -3,7 +3,7 @@ import {
     GLTFLoader
 } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-export default class Door {
+export default class Clouds {
     constructor(scene) {
         this.scene = scene
         this.init()
@@ -11,13 +11,12 @@ export default class Door {
     
     init() {
 
-        const door = new GLTFLoader();
+        const clouds = new GLTFLoader();
         
-        door.load('/assets/object/gltf/gothic/door.gltf', (gltf) => {
-            console.log(gltf)
+        clouds.load('/assets/object/gltf/clouds/clouds.gltf', (gltf) => {
             this.scene.add(gltf.scene);
-            gltf.scene.scale.set(20, 20, 20);
-            gltf.scene.rotation.y = 80;
+            gltf.scene.scale.set(1, -1, 1.5);
+            gltf.scene.rotation.y = 50;
             gltf.scene.position.y = 30;
         })
     }
