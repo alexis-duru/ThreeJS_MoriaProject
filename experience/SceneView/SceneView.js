@@ -119,16 +119,16 @@ export default class SceneView extends SceneBase {
         // LOAD DE L'OBJET PORTE //
 
         const loader = new GLTFLoader();
-        loader.load('././assets/object/gltf/gothic/door.gltf', (gltf) => {
+        loader.load('/assets/object/gltf/gothic/door.gltf', (gltf) => {
             // console.log(gltf)
             this.scene.add(gltf.scene);
             gltf.scene.scale.set(20, 20, 20);
             gltf.scene.rotation.y = 80;
-            gltf.scene.position.y = 20;
+            gltf.scene.position.y = 30;
         })
 
         const clouds = new GLTFLoader();
-        clouds.load('././assets/object/gltf/clouds/clouds.gltf', (gltf) => {
+        clouds.load('/assets/object/gltf/clouds/clouds.gltf', (gltf) => {
             // console.log(gltf)
             this.scene.add(gltf.scene);
             gltf.scene.scale.set(1, 0.35, 1.5);
