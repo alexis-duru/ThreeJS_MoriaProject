@@ -31,7 +31,7 @@ export default class SceneView extends SceneBase {
         this.isReady = false;
 
         // HELPERS
-        this.setControls();
+        // this.setControls();
         this.setHelpers();
 
 
@@ -62,6 +62,7 @@ export default class SceneView extends SceneBase {
 
         this.addTestSphere4();
 
+
         // this.addTestDoor();
 
         const earth = new Planet({
@@ -86,6 +87,7 @@ export default class SceneView extends SceneBase {
         this.scene.add(mars.object)
 
         this.planets.push(mars)
+
 
 
         // CREATION DU TABLEAU DE PLANETE
@@ -131,10 +133,28 @@ export default class SceneView extends SceneBase {
         clouds.load('/assets/object/gltf/clouds/clouds.gltf', (gltf) => {
             // console.log(gltf)
             this.scene.add(gltf.scene);
-            gltf.scene.scale.set(1, 0.35, 1.5);
+            gltf.scene.scale.set(1, -1, 1.5);
             gltf.scene.rotation.y = 50;
             gltf.scene.position.y = 30;
         })
+
+        // const clouds2 = new GLTFLoader();
+        // clouds.load('/assets/object/gltf/clouds/clouds.gltf', (gltf) => {
+        //     // console.log(gltf)
+        //     this.scene.add(gltf.scene);
+        //     gltf.scene.scale.set(1, -0.4, 1.5);
+        //     gltf.scene.rotation.y = 50;
+        //     gltf.scene.position.y = 30;
+        // })
+
+        // const clouds3 = new GLTFLoader();
+        // clouds.load('/assets/object/gltf/clouds/clouds.gltf', (gltf) => {
+        //     // console.log(gltf)
+        //     this.scene.add(gltf.scene);
+        //     gltf.scene.scale.set(1, -0.4, 1.5);
+        //     gltf.scene.rotation.y = 50;
+        //     gltf.scene.position.y = 50;
+        // })
 
         
 
@@ -255,7 +275,7 @@ export default class SceneView extends SceneBase {
     
 
     setupLights() {
-        const hemiLight = new HemisphereLight(0xffffff, 0xffffff, 0.6);
+        const hemiLight = new HemisphereLight(0xffffff, 0xffffff, 0.1);
         hemiLight.color.setHSL(0.6, 1, 0.6);
         hemiLight.groundColor.setHSL(0.095, 1, 0.75);
         hemiLight.position.set(0, 50, 0);
@@ -284,9 +304,10 @@ export default class SceneView extends SceneBase {
         dirLight.shadow.camera.far = 3500;
         dirLight.shadow.bias = -0.0001;
 
-        const dirLightHelper = new DirectionalLightHelper(dirLight, 10);
-        this.scene.add(dirLightHelper);
+        // const dirLightHelper = new DirectionalLightHelper(dirLight, 10);
+        // this.scene.add(dirLightHelper);
     }
+
 
 
 
@@ -295,6 +316,8 @@ export default class SceneView extends SceneBase {
             this.sphereMesh.position.x += 0.01;
             this.planets.forEach(planet => planet.update());
         }
+
+        
     }
 
 

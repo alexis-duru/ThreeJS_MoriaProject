@@ -8,7 +8,8 @@ import {
     PerspectiveCamera,
     Scene,
     WebGLRenderer,
-    TextureLoader
+    TextureLoader,
+    Vector3
 } from 'three';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
@@ -53,7 +54,7 @@ export default class SceneBase {
         // const bgTexture = loader.load('assets/images/textures/sky.jpg');
         // scene.background = bgTexture;
         const loader = new TextureLoader();
-        const background = loader.load( 'assets/background/texture.jpg' );
+        const background = loader.load( 'assets/background/black.jpg' );
         this.scene = new Scene();
 
         this.scene.background = background;
@@ -71,7 +72,11 @@ export default class SceneBase {
             1,
             10000
         );
-        this.camera.position.set(0, 50, 200);
+        this.camera.position.set(0, 25, 200);
+        this.cameraTarget = new Vector3(0, 50, 0);
+        this.camera.lookAt(this.cameraTarget)
+
+
     }
 
     setControls () {

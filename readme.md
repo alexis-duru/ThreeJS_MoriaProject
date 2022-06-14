@@ -14,3 +14,7 @@ Scene : Groupe ou l'on met les éléments à l'intérieur
 Camera: Gestion de l'ouverture - de la distance
 
 # console : command + option + i
+
+# deploiement netlify : dossier public à la racine avec les assets
+
+# scene.camera.position dans la console
