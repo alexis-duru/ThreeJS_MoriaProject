@@ -265,6 +265,10 @@ export default class SceneView extends SceneBase {
         if(this.door){
             this.door.update();
         }
+
+        // if(this.pointLight) {
+        //     this.pointLight.update()
+        // }
     }
 
 

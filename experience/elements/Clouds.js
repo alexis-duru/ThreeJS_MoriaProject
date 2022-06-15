@@ -1,4 +1,4 @@
-import { Object3D, Mesh, MeshBasicMaterial, SphereGeometry, HemisphereLight, DirectionalLight, DirectionalLightHelper } from "three";
+import { Object3D, Mesh, MeshBasicMaterial, SphereGeometry, HemisphereLight, DirectionalLight, DirectionalLightHelper, PointLight } from "three";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 const SPEEDS = [0.05, 0.06];
@@ -23,7 +23,7 @@ export default class Clouds {
 
             this.generateCloud();
         
-        });
+        })
     }
 
     generateCloud() {
@@ -39,8 +39,6 @@ export default class Clouds {
     }
 
     update() {
-
-        
         this.cloudsArray.forEach((cloud, i) => {
             if(cloud.position.x > 200) {
                 cloud.position.x = POSITIONS[i]

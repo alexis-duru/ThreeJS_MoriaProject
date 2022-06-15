@@ -1,5 +1,6 @@
 import { Object3D, Mesh, MeshBasicMaterial, SphereGeometry, HemisphereLight, DirectionalLight, DirectionalLightHelper } from "three";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import DoorLight from '../Light/DoorLight';
 
 const SPEEDS = [0.01, 0.10];
 const POSITIONS = [-5, 5];
@@ -8,7 +9,8 @@ const POSITIONS = [-5, 5];
 export default class Door {
     constructor(scene) {
         this.scene = scene
-        this.mesh = null
+
+        // PERMET D'INCREMENTER DE 1 MON COSINUS / SINUS
         this.tick = 0
         this.init()
     }
@@ -22,6 +24,8 @@ export default class Door {
             this.model = gltf.scene
 
             this.movementDoor();
+
+            this.light = new DoorLight(this.scene);
         });
     }
     
@@ -39,11 +43,18 @@ export default class Door {
 
 
     update() {
-        const door = this.door
+        // Vérifier que la porte soit chargée et instancié
+        if(!this.door ) {
+            return
+        }
         this.tick += 1
         const offset = 30
         const distance = 2
-        door.position.y = Math.sin(this.tick / 100) * distance + offset;
+        this.door.position.y = Math.sin(this.tick / 100) * distance + offset;
+
+        this.light.update();
     }
+
+
 
 }

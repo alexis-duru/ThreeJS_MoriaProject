@@ -1,13 +1,19 @@
 import { Object3D, Mesh, MeshBasicMaterial, SphereGeometry } from "three";
 
 export default class Planet {
-    constructor({ distance, speed, size = 1, color }) {
+    constructor
+        ({ 
+            distance, 
+            speed, size = 1, 
+            color 
+        })
+        
+        {
         this.parameters = { 
             distance : distance,
             speed : speed,
             size: size,
-            color: color,
-            
+            color: color, 
         };
 
         this.init()
