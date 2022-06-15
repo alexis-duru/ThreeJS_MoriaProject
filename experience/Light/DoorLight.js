@@ -71,8 +71,8 @@ export default class DoorLight {
     update() {
         const time = Date.now() * 0.0005;
 
-        this.light1.position.x = Math.sin( time * 0.7 ) * 30;
-        this.light1.position.y = Math.cos( time * 0.5 ) * 40;
+        this.light1.position.x = Math.sin( time * 0.7 ) * 20;
+        this.light1.position.y = Math.cos( time * 0.5 ) * 30;
         this.light1.position.z = Math.cos( time * 0.3 ) * 30;
 
         this.light2.position.x = Math.cos( time * 0.3 ) * 30;
