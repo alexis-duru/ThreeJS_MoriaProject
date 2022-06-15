@@ -3,57 +3,40 @@ import { PointLight, Object3D, SphereGeometry, MeshBasicMaterial, Mesh, Clock } 
 export default class DoorLight {
     constructor(scene, center) {
         this.scene = scene
-
         this.camera; 
         this.scene; 
         this.renderer;
         this.center = center;
-        
         this.lights = [];
 
         this.init()
     }
 
     init() {
-        // const pointLight = new PointLight( 0x070867, 100, 500 );
-
-        // pointLight.position.set( 50, 50, 50 );
-
-        // this.scene.add(pointLight);
-
-        // this.pointLight = new Mesh(geometry, material);
-
         // LIGHTS
+
         this.addLight({
-            color: 0xff0040
+            color: 0x1F51FF
         });
         this.addLight({
-            color: 0x0040ff
+            color: 0x1F51FF
         });
         this.addLight({
-            color: 0x80ff80
+            color: 0x1F51FF
         });
         this.addLight({
-            color: 0xffaa00
+            color: 0x1F51FF
         });
-
-        // const material = new MeshBasicMaterial( { color: 0xffff00 } );
-        // const sphere = new Mesh( geometry, material );
-        // this.scene.add(sphere);
-
-        // this.object.add(this.scene);
-
-        // light1 = new PointLight( 0xff0040, 2, 50 );
-        // light1.add( new Mesh( sphere, new MeshBasicMaterial( { color: 0xff0040 } ) ) );
-        // scene.add( light1 );
-
     }
 
-    addLight({color = 0xffffff, intensity = 2, distance = 70}) {
+    addLight({color = 0xffffff, intensity = 3, distance = 90}) {
+
         // Création de la light
+
         const light = new PointLight( color, intensity, distance );
         
         // Ajout d'une sphere debug pour visualiser le centre de la light
+
         const geometry = new SphereGeometry( .5, 10, 16 );
         light.add( new Mesh( geometry, new MeshBasicMaterial( { color } ) ) );
 
@@ -62,6 +45,7 @@ export default class DoorLight {
     }
 
     update() {
+        
         const time = Date.now() * 0.0005;
      
         this.lights[0].position.x = Math.sin( time * 0.7 ) * 20;
@@ -91,8 +75,4 @@ export default class DoorLight {
     // getNextPosition(functionName, time, timeFactor, distance, axis) {
     //     return Math[functioName]( time * timeFactor ) * distance + this.center[axis];
     // }
-
-
-
-
 }

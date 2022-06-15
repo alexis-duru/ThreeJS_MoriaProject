@@ -1,15 +1,7 @@
 import {
-    Mesh,
-    SphereGeometry,
-    MeshStandardMaterial,
-    PlaneGeometry,
-    MeshBasicMaterial,
-    DoubleSide,
-    AdditiveBlending,
     HemisphereLight,
     DirectionalLight,
-    DirectionalLightHelper,
-    Audio,
+    Group,
 
 } from 'three';
 
@@ -17,9 +9,10 @@ import {
     GLTFLoader
 } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-import Planet from '../elements/Planet.js';
+// import Planet from '../elements/Planet.js';
 import Door from '../elements/Door.js';
 import Clouds from '../elements/Clouds.js';
+import Stars from '../elements/Stars';
 
 import SceneBase from './Scene/SceneBase';
 
@@ -41,7 +34,6 @@ export default class SceneView extends SceneBase {
         this.load();
 
         // this.setupLights();
-
     }
 
     setup() {
@@ -52,171 +44,20 @@ export default class SceneView extends SceneBase {
 
         this.clouds = new Clouds(this.scene)
 
+        this.addStars();
+
         this.camera.position.x = 3;
 
-        // this.addTestSphere1();
-
-        // this.addTestSphere2();
-
-        // this.addTestSphere3();
-
-        // this.addTestSphere4();
-        
-        // this.addTestDoor();
-
-        // const earth = new Planet({
-        //     distance: 10,
-        //     speed: 0.01,
-        //     size: 2
-        // });
-
-        // this.scene.add(earth.object);
-
-        // this.planets.push(earth)
-
-        // const mars = new Planet({
-        //     distance: 50,
-        //     speed: 0.005,
-        //     size: 5,
-
-        // });
-
-        // this.scene.add(mars.object)
-
-        // this.planets.push(mars)
-
-
         // CREATION DU TABLEAU DE PLANETE
-
-
-
-        // earth.object.position.y = 50
-
-
-
-        // this.addDoorObject();
 
         this.camera.position.y = 1;
         // POSITION CAMERA
         this.isReady = true;
     }
 
-    // :: REFACTO ::
-    // :: REFACTO ::
-    // :: REFACTO ::
-
-    // addPlanet (planetData) {
-    //     const planet = new Planet(planetData);
-    //     this.scene.add(planet.object);
-    //     this.planets.push(planet)
-    // }
-
     load() {
 
     }
-
-    // DECLARATION DE MES ELEMENTS SUR LA MAP
-
-    // addTestSphere1() {
-
-    //     // L'endroit ou je load mon premier element
-
-    //     const sphereGeometry = new SphereGeometry(3, 10, 40);
-    //     const sphereMaterial = new MeshStandardMaterial({
-    //         color: 0xffffff,
-
-    //         wireframe: true
-    //     });
-
-    //     this.sphereMesh = new Mesh(sphereGeometry, sphereMaterial);
-
-    //     this.sphereMesh.position.set(20, 30, 50)
-
-    //     this.scene.add(this.sphereMesh);
-
-    // }
-
-    // addTestSphere2() {
-
-    //     // L'endroit ou je load mon premier element
-
-    //     const sphereGeometry = new SphereGeometry(6, 20, 60);
-    //     const sphereMaterial = new MeshStandardMaterial({
-    //         color: 0xffffff,
-
-    //         wireframe: true
-    //     });
-
-    //     this.sphereMesh = new Mesh(sphereGeometry, sphereMaterial);
-
-    //     this.sphereMesh.position.set(-50, 50, 25)
-
-    //     this.scene.add(this.sphereMesh);
-
-    // }
-
-
-    // addTestSphere3() {
-
-    //     // L'endroit ou je load mon premier element
-
-    //     const sphereGeometry = new SphereGeometry(6, 20, 60);
-    //     const sphereMaterial = new MeshStandardMaterial({
-    //         color: 0xffffff,
-
-    //         wireframe: true
-    //     });
-
-    //     this.sphereMesh = new Mesh(sphereGeometry, sphereMaterial);
-
-
-    //     this.sphereMesh.position.set(-20, 20, -25)
-
-    //     this.scene.add(this.sphereMesh);
-
-    // }
-
-    // addTestSphere4() {
-
-    //     // L'endroit ou je load mon premier element
-
-    //     const sphereGeometry = new SphereGeometry(6, 20, 60);
-    //     const sphereMaterial = new MeshStandardMaterial({
-    //         color: 0xffffff,
-
-    //         wireframe: true
-    //     });
-
-    //     this.sphereMesh = new Mesh(sphereGeometry, sphereMaterial);
-
-    //     this.sphereMesh.position.set(40, 20, -45)
-
-    //     this.scene.add(this.sphereMesh);
-
-    // }
-
-
-    // addTestDoor() {
-    //     const doorGeometry = new PlaneGeometry(20, 30);
-    //     const doorMaterial = new MeshBasicMaterial({
-    //         color: 0xffffff,
-    //         side: DoubleSide,
-    //         blending: AdditiveBlending,
-    //         wireframe: true
-
-    //     });
-
-    //     this.plane = new Mesh(doorGeometry, doorMaterial);
-
-    //     this.plane.position.set(5, 30, 5)
-
-
-    //     this.scene.add(this.plane);
-    // }
-
-    // window.addEventListener('click', () => {
-    //     // LE CODE ICI 
-    // })
 
     setupLights() {
         const hemiLight = new HemisphereLight(0xffffff, 0xffffff, 0.1);
@@ -252,10 +93,22 @@ export default class SceneView extends SceneBase {
         // this.scene.add(dirLightHelper);
     }
 
+    addStars () {
+
+        this.starsContainer = new Group();
+
+        for (let i = 0; i < 3; i += 1) {
+            this.starsContainer.add( new Stars());
+        }
+        
+        this.scene.add(this.starsContainer);
+    }
+
     update() {
         if (this.sphereMesh) {
             this.sphereMesh.position.x += 0.01;
             this.planets.forEach(planet => planet.update());
+            this.starsContainer.children.forEach(stars => stars.update());
         }
 
         if (this.clouds) {
@@ -265,10 +118,6 @@ export default class SceneView extends SceneBase {
         if(this.door){
             this.door.update();
         }
-
-        // if(this.pointLight) {
-        //     this.pointLight.update()
-        // }
     }
 
 

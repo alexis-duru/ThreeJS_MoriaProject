@@ -84,8 +84,8 @@ export default class SceneBase {
     }
 
     setHelpers () {
-        this.gridHelper = new GridHelper(100, 10);
-        this.scene.add(this.gridHelper);
+        // this.gridHelper = new GridHelper(100, 10);
+        // this.scene.add(this.gridHelper);
 
         const cube = new Mesh(
             new BoxGeometry(10, 10, 10),
