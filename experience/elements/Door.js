@@ -4,6 +4,7 @@ import DoorLight from '../Light/DoorLight';
 
 const SPEEDS = [0.01, 0.10];
 const POSITIONS = [-5, 5];
+const OFFSET_Y = 30;
 
 
 export default class Door {
@@ -25,7 +26,11 @@ export default class Door {
 
             this.movementDoor();
 
-            this.light = new DoorLight(this.scene);
+            this.light = new DoorLight(this.scene, {
+                x: 0,
+                y: OFFSET_Y,
+                z: 0
+            });
         });
     }
     
@@ -48,11 +53,12 @@ export default class Door {
             return
         }
         this.tick += 1
-        const offset = 30
         const distance = 2
-        this.door.position.y = Math.sin(this.tick / 100) * distance + offset;
+        this.door.position.y = Math.sin(this.tick / 100) * distance + OFFSET_Y;
 
-        this.light.update();
+        if (this.light) {
+            this.light.update();
+        }
     }
 
 

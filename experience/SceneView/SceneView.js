@@ -40,7 +40,7 @@ export default class SceneView extends SceneBase {
 
         this.load();
 
-        this.setupLights();
+        // this.setupLights();
 
     }
 
