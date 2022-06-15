@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'annabelle';
-  src: url(/public/assets/fonts/Anabele.ttf);
+  src: url(/assets/fonts/Anabele.ttf);
 }
 
 @font-face {
   font-family: 'Bebas';
-  src: url(/public/assets/fonts/Bebas-Regular.ttf);
+  src: url(/assets/fonts/Bebas-Regular.ttf);
 }
 
 * {
@@ -62,7 +62,7 @@ canvas{
 }
 
 .img-2 {
-  background-image: url(public/assets/object/images/moon.png);
+  background-image: url(/assets/object/images/moon.png);
   background-size: cover;
   width: 80px;
   height: 80px;
