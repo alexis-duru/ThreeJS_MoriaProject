@@ -1,18 +1,13 @@
-import {
-    HemisphereLight,
-    DirectionalLight,
-    Group,
+import { HemisphereLight, DirectionalLight, Group } from 'three';
 
-} from 'three';
-
-import {
-    GLTFLoader
-} from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 // import Planet from '../elements/Planet.js';
 import Door from '../elements/Door.js';
 import Clouds from '../elements/Clouds.js';
 import Stars from '../elements/Stars';
+// import CameraManager from '../camera/CameraManager';
+// import CameraManager from '../camera/CameraManager.js';
 
 import SceneBase from './Scene/SceneBase';
 
@@ -51,6 +46,9 @@ export default class SceneView extends SceneBase {
         // CREATION DU TABLEAU DE PLANETE
 
         this.camera.position.y = 1;
+
+        // this.cameraManager = new CameraManager(this.scene)
+
         // POSITION CAMERA
         this.isReady = true;
     }
