@@ -1,6 +1,6 @@
 gsap.registerPlugin(Draggable, InertiaPlugin);
 
-let clampSkew = gsap.utils.clamp(-20, 20);
+let clampSkew = gsap.utils.clamp(-10, 10);
 
 class DraggableImg {
   constructor(Image) {

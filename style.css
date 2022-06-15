@@ -3,10 +3,6 @@
   src: url(/assets/fonts/Anabele.ttf);
 }
 
-@font-face {
-  font-family: 'Bebas';
-  src: url(/assets/fonts/Bebas-Regular.ttf);
-}
 
 * {
   margin: 0;
@@ -58,7 +54,7 @@ canvas{
     position: relative;
     background-color: transparent;
     margin: 4rem;
-    cursor: grab;
+    /* cursor: grab; */
 }
 
 .img-2 {

@@ -261,6 +261,10 @@ export default class SceneView extends SceneBase {
         if (this.clouds) {
             this.clouds.update();
         }
+
+        if(this.door){
+            this.door.update();
+        }
     }
 
 

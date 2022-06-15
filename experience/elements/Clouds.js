@@ -1,7 +1,7 @@
 import { Object3D, Mesh, MeshBasicMaterial, SphereGeometry, HemisphereLight, DirectionalLight, DirectionalLightHelper } from "three";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-const SPEEDS = [0.03, 0.06];
+const SPEEDS = [0.05, 0.06];
 const POSITIONS = [-100, 50];
 
 export default class Clouds {
@@ -28,7 +28,6 @@ export default class Clouds {
 
     generateCloud() {
         const cloud = this.model.clone();
-        console.log(cloud)
         this.scene.add(cloud);
         
         cloud.scale.set(1, -1, 1.5);
@@ -40,7 +39,12 @@ export default class Clouds {
     }
 
     update() {
+
+        
         this.cloudsArray.forEach((cloud, i) => {
+            if(cloud.position.x > 200) {
+                cloud.position.x = POSITIONS[i]
+            }
             cloud.position.x += SPEEDS[i]
         })
     }
