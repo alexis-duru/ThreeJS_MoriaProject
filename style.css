@@ -3,7 +3,6 @@
   src: url(/assets/fonts/Anabele.ttf);
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -23,10 +22,6 @@ canvas{
 }
 
 
-/* .name p:hover {
-  opacity: 0.4;
-} */
-
 .project {
   position: fixed;
   z-index: 9999;
@@ -40,8 +35,6 @@ canvas{
   right: 0;
 }
 
-
-
 .content__drag-area {
   height: 100vh;
   width: 100vw;
@@ -54,7 +47,6 @@ canvas{
     position: relative;
     background-color: transparent;
     margin: 4rem;
-    /* cursor: grab; */
 }
 
 .img-2 {
@@ -62,10 +54,6 @@ canvas{
   background-size: cover;
   width: 80px;
   height: 80px;
-}
-
-.img-2:hover {
-  
 }
 
 .floating { 
@@ -80,3 +68,78 @@ canvas{
   50%  { transform: translate(0, 3px); }
   100%   { transform: translate(0, -0px); }   
 }
+
+nav {
+  z-index: 999;
+}
+.menu {
+  position: absolute;
+  bottom: 0;
+  right: -15px;
+  width: auto;
+  margin-bottom: 13px;
+  height: auto;
+  user-select: none;
+  counter-reset: menucounter;
+  color: white;
+  transform: scale(0.6);
+  font-family: 'annabelle';
+ }
+ 
+ .menu-item {
+     position: relative;
+     text-transform: uppercase;
+     cursor: pointer;
+     color: white;
+    
+ }
+ 
+ .menu-item::before {
+     counter-increment: menucounter;
+     content: counters(menucounter, '.', decimal-leading-zero);
+     position: absolute;
+     left: -35px;
+     top: 0;
+     font-size: 15px;
+     color: white;
+ }
+ 
+ .menu-item-text {
+     pointer-events: none;
+     display: block;
+     line-height: 1;
+     position: relative;
+     font-size: 2rem;
+ }
+ 
+ .menu-item > div:nth-child(1) span {
+     will-change: transform;
+     transform-style: preserve-3d;
+     transition: 0.5s;
+     transition-delay: calc(0.05s * var(--index));
+     transform-origin: bottom;
+     display: inline-block;
+ }
+ 
+ .menu-item > div:nth-child(2) span {
+     will-change: transform;
+     transform-style: preserve-3d;
+     transition: 0.5s;
+     transition-delay: calc(0.05s * var(--index));
+     transform-origin: top;
+     display: inline-block;
+     transform: translate3d(0, 100%, 0) rotateX(-90deg);
+ }
+ 
+ .menu-item:hover > div:nth-child(1) span {
+     transform: translate3d(0, -100%, 0) rotateX(-90deg);
+ 
+ }
+ 
+ .menu-item:hover > div:nth-child(2) span {
+     transform: translate3d(0, 0%, 0) rotateX(0deg); 
+ }
+ 
+ span {
+     font-size: 2rem;
+ }

@@ -4,7 +4,7 @@ import DoorLight from '../Light/DoorLight';
 
 const SPEEDS = [0.01, 0.10];
 const POSITIONS = [-5, 5];
-const OFFSET_Y = 30;
+const OFFSET_Y = 40;
 
 
 export default class Door {

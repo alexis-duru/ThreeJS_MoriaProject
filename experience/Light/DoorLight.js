@@ -37,7 +37,7 @@ export default class DoorLight {
         
         // Ajout d'une sphere debug pour visualiser le centre de la light
 
-        const geometry = new SphereGeometry( .5, 10, 16 );
+        const geometry = new SphereGeometry( .0, 10, 16 );
         light.add( new Mesh( geometry, new MeshBasicMaterial( { color } ) ) );
 
         this.lights.push(light);

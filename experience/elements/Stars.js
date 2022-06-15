@@ -1,15 +1,15 @@
 import { Object3D, BufferGeometry, Float32BufferAttribute, PointsMaterial, Points } from "three";
 
 
-const DEFAULT_SPEED = 0.004;
+const DEFAULT_SPEED = 0.007;
 
 export default class Stars extends Object3D {
     constructor () {
         super();
 
         const vertices = [],
-            distance = 50,
-            quantity = 100,
+            distance = 40,
+            quantity = 50,
             geometry = new BufferGeometry();
 
         let material;
@@ -22,7 +22,7 @@ export default class Stars extends Object3D {
         }
 
         geometry.setAttribute('position', new Float32BufferAttribute( vertices, 3 ) );
-        material = new PointsMaterial( { size: 0.4, sizeAttenuation: true } );
+        material = new PointsMaterial( { size: 0.3, sizeAttenuation: true } );
 
         this.particles = new Points( geometry, material );
         this.add( this.particles );
@@ -33,7 +33,7 @@ export default class Stars extends Object3D {
             z: Math.random() - 0.5
         };
     }
-    
+
     update () {
         this.rotation.x += DEFAULT_SPEED * this.speed.x;
         this.rotation.y += DEFAULT_SPEED * this.speed.y;

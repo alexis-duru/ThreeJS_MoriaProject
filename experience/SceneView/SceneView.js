@@ -100,6 +100,8 @@ export default class SceneView extends SceneBase {
         for (let i = 0; i < 3; i += 1) {
             this.starsContainer.add( new Stars());
         }
+
+        this.starsContainer.position.y = 35
         
         this.scene.add(this.starsContainer);
     }
@@ -108,7 +110,7 @@ export default class SceneView extends SceneBase {
         if (this.sphereMesh) {
             this.sphereMesh.position.x += 0.01;
             this.planets.forEach(planet => planet.update());
-            this.starsContainer.children.forEach(stars => stars.update());
+            // this.starsContainer.children.forEach(stars => stars.update());
         }
 
         if (this.clouds) {
@@ -117,6 +119,10 @@ export default class SceneView extends SceneBase {
 
         if(this.door){
             this.door.update();
+            this.starsContainer.children.forEach(stars => stars.update());
+        }
+
+        if(this.stars){
         }
     }
 
