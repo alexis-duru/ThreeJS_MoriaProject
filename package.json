@@ -11,6 +11,7 @@
     "vite": "^2.9.9"
   },
   "dependencies": {
+    "amplitudejs": "^5.3.2",
     "gsap": "npm:@gsap/shockingly@^3.10.4",
     "signals": "^1.0.0",
     "three": "^0.141.0"

@@ -2,7 +2,7 @@ import { Object3D, Mesh, MeshBasicMaterial, SphereGeometry, HemisphereLight, Dir
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 const SPEEDS = [0.05, 0.06];
-const POSITIONS = [-100, 50];
+const POSITIONS = [-50, 50];
 
 export default class Clouds {
     constructor(scene) {
@@ -40,7 +40,7 @@ export default class Clouds {
 
     update() {
         this.cloudsArray.forEach((cloud, i) => {
-            if(cloud.position.x > 200) {
+            if(cloud.position.x > 100) {
                 cloud.position.x = POSITIONS[i]
             }
             cloud.position.x += SPEEDS[i]

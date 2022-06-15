@@ -3,6 +3,13 @@
   src: url(/assets/fonts/Anabele.ttf);
 }
 
+
+@font-face {
+  font-family: 'elf2';
+  src: url(/assets/fonts/elvish\ ring\ nfi.ttf)
+ }
+
+
 * {
   margin: 0;
   padding: 0;
@@ -149,14 +156,14 @@ nav {
   height: 20px;
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   z-index: 999;
  }
 
  .line span {
   width: 150px;
     height: 1px;
-    right: 30px;
+    left: 30px;
     top: 15px;
     opacity: 0.8;
     position: absolute;
@@ -164,3 +171,54 @@ nav {
     z-index: 9999;
     background: rgba(255, 255, 255, 0.372);
  }
+
+ .door_text_wrapper {
+  width: auto;
+  height: auto;
+  color: white;
+  z-index: 9999;
+  position: absolute;
+  font-family: 'elf2';
+  top: 13%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 10px;
+  opacity: 0.8;
+  font-size: 10px;
+ }
+
+ .cssanimation, .cssanimation span {
+  animation-duration: 10s;
+  animation-delay: 65s;
+  animation-fill-mode: both;
+}
+
+.cssanimation span { display: inline-block }
+
+.fadeInBottom { animation-name: fadeInBottom }
+@keyframes fadeInBottom {
+  from {
+      opacity: 0;
+      transform: translateY(100%);
+  }
+  to { opacity: 1 }
+}
+
+/* .title-container {
+  position: absolute;
+  width: 250px;
+  height: 50px;
+  background-color: white;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  color: black;
+}
+
+.explore {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: 0px;
+  padding: 20px;
+} */
