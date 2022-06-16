@@ -45,10 +45,10 @@ export default class SceneView extends SceneBase {
 
         this.spotLight = new SpotLight(this.scene)
 
-        this.camera.position.x = 3;
+        this.camera.position.x = 100;
 
         // CREATION DU TABLEAU DE PLANETE
-        this.camera.position.y = 1;
+        this.camera.position.y = -10;
 
         // CAMERA MANAGER
         this.cameraManager = new CameraManager(this);

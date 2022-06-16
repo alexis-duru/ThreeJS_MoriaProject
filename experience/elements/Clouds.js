@@ -23,9 +23,6 @@ export default class Clouds {
             this.generateCloud();
             this.generateTopcloud();
             this.generateTopcloud();
-            //  this.generateCloud();
-            //  this.generateCloud()
-        
         })
     }
 
