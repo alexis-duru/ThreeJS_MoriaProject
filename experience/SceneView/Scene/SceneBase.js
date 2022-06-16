@@ -12,6 +12,7 @@ import {
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import TWEEN from '@tweenjs/tween.js';
+import gsap from 'gsap'
 
 export default class SceneBase {
     constructor () {
@@ -73,8 +74,6 @@ export default class SceneBase {
         this.camera.position.set(0, 25, 170);
         this.cameraTarget = new Vector3(0, 50, 0);
         this.camera.lookAt(this.cameraTarget)
-
-
     }
 
     setControls () {
@@ -105,6 +104,7 @@ export default class SceneBase {
 
     update () {
         //
+       
     }
 
     render () {

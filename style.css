@@ -21,8 +21,63 @@ body {
   margin: 0;
   overflow: hidden;
   position: fixed;
-
+  /* cursor: none; */
   z-index: 99999;
+}
+
+#check {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  z-index: 100000;
+  color: white;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+  outline: none;
+  flex-direction: column;
+}
+
+#check input {
+  padding: 5px;
+  margin-left: 20px;
+  font-family: 'elf2';
+  outline: none;
+}
+#check p {
+  font-family: 'elf2';
+  margin-bottom: 20px;
+}
+
+#check a {
+  color: white;
+  font-family: 'annabelle';
+  letter-spacing: 3px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: 0.4 ease-in-out;
+  cursor: pointer;
+}
+
+#check a:hover {
+  opacity: 0.6;
+}
+
+#check a::after {
+  width: 100%;
+  margin-top: 2px;
+  height: 1px;
+  background-color: white;
+  content: '';
+  display: flex;
+  flex-direction: column;
+}
+
+#check.remove {
+  display: none;
 }
 
 canvas{
@@ -216,6 +271,7 @@ nav {
 
  .door_text_wrapper input:hover {
   opacity: 1;
+  cursor:help
  }
 
 

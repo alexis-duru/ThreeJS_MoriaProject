@@ -8,6 +8,13 @@
   </head>
 
   <body>
+
+    <div id="check">
+      <p>Password:<input id="passwordBox" type="password"/></p>
+      <a onclick="return checkPassword();">
+        SPEAK FRIEND AND ENTER
+       </a>
+    </div>
     <div class="title-container">
       <!-- <div class="title">
         <p>WELCOME</p>
@@ -39,6 +46,22 @@
     function play() {
       audio.play();
     };
+
+    function checkPassword() {
+      var password = document.getElementById("passwordBox");
+      var passwordText = password.value;
+      if(passwordText === "bella") {
+        document.getElementById("check").classList.add('remove');
+        console.log('hello')
+        return true;
+      }
+      alert("Access denied! Incorrect password!");
+      return false;
+   }
+
+
+
+
 
     // link.addEventListener('click', function handleClick() {
     // link.classList.add('colorButton');
