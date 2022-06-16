@@ -15,11 +15,10 @@
       </div> -->
     </div>
     <div class="door_text_wrapper">
-      <a class="cssanimation sequence fadeInBottom">SPEAK FRIEND AND ENTER</a>
+      <input id="link" class="cssanimation sequence fadeInBottom" type="button" value="SPEAK FRIEND AND ENTER" onclick="play()">
+      <!-- <a class="cssanimation sequence fadeInBottom">SPEAK FRIEND AND ENTER</a> -->
     </div>
-    <!-- <div class="line">
-      <span></span>
-    </div> -->
+
     <nav class="menu">
       <a href="#" class="menu-item">
           <div>
@@ -28,8 +27,21 @@
       </a>
     </nav>
 
-  <audio autoplay="true" src="/assets/sounds/track.mp3"></audio>
+  <audio id="audio" src="/assets/sounds/track.mp3"></audio>
 
 </body>
   <script defer type="module" src="/main.js"></script>
+  <script>
+    var audio = document.getElementById("audio");
+    var link = document.getElementById("link");
+
+    
+    function play() {
+      audio.play();
+    };
+
+    // link.addEventListener('click', function handleClick() {
+    // link.classList.add('colorButton');
+    // });
+  </script>
 </html>

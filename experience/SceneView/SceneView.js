@@ -113,7 +113,6 @@ export default class SceneView extends SceneBase {
         if (this.sphereMesh) {
             this.sphereMesh.position.x += 0.01;
             this.planets.forEach(planet => planet.update());
-            // this.starsContainer.children.forEach(stars => stars.update());
         }
 
         if (this.clouds) {

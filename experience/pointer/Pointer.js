@@ -9,7 +9,7 @@ class Pointer {
     get ratio () {
         return {
             x: (this._x / window.innerWidth) * 2 - 1,
-            y: (this._y / window.innerHeight) * -2 + 1
+            y: (this._y / window.innerHeight) * -2 + 8
         }
     }
     onMove(event) {

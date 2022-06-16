@@ -50,7 +50,7 @@ export default class SceneBase {
 
     setScene () {
         const loader = new TextureLoader();
-        const background = loader.load( 'assets/background/black.jpg' );
+        const background = loader.load( 'assets/background/blackbackground.jpg' );
         this.scene = new Scene();
 
         this.scene.background = background;

@@ -183,12 +183,9 @@ nav {
   font-family: 'elf2';
   top: 18px;
   right: 30px;
-  /* transform: translate(-50%, -50%); */
-  letter-spacing: 10px;
-  letter-spacing: 2px;
  }
 
- .door_text_wrapper a {
+ /* .door_text_wrapper a {
   cursor: pointer;
   opacity: 0.2;
   font-size: 15px;
@@ -197,7 +194,30 @@ nav {
 
  .door_text_wrapper a:hover {
   opacity: 1;
+ } */
+
+ .door_text_wrapper input {
+  cursor: pointer;
+  opacity: 0.2;
+  font-size: 18px;
+  transition: 0.3s ease-in-out;
+  border: 0px;
+  font-family: 'elf2';
+  letter-spacing: 2px;
+  background: 0;
+  color: white;
  }
+
+ /* .colorButton {
+  color: white;
+  font-size: 25px;
+  opacity: 1;
+ } */
+
+ .door_text_wrapper input:hover {
+  opacity: 1;
+ }
+
 
 
 

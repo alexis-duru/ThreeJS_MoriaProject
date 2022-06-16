@@ -5,7 +5,7 @@ import TWEEN from '@tweenjs/tween.js';
 
 const SPEEDS = [0.01, 0.10];
 const POSITIONS = [-5, 5];
-const OFFSET_Y = 40;
+const OFFSET_Y = 30;
 
 
 export default class Door {
@@ -43,10 +43,10 @@ export default class Door {
         console.log(this.door)
 
         this.scene.add(this.door)
-        this.door.scale.set(20, 20, 20);
+        this.door.scale.set(25, 25, 25);
         this.door.rotation.y = 80.05;
         this.door.position.x =  0;
-        this.door.position.y = 30;
+        this.door.position.y = 0;
     }
 
 
