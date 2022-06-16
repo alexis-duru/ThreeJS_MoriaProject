@@ -161,7 +161,7 @@ nav {
  }
 
  .line span {
-  width: 150px;
+  width: 173px;
     height: 1px;
     left: 30px;
     top: 15px;
@@ -179,15 +179,16 @@ nav {
   z-index: 9999;
   position: absolute;
   font-family: 'elf2';
-  top: 13%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 18px;
+  right: 30px;
+  /* transform: translate(-50%, -50%); */
   letter-spacing: 10px;
-  opacity: 0.8;
-  font-size: 10px;
+  opacity: 0.5;
+  font-size: 7px;
+  letter-spacing: 2px;
  }
 
- .cssanimation, .cssanimation span {
+ /* .cssanimation, .cssanimation span {
   animation-duration: 10s;
   animation-delay: 65s;
   animation-fill-mode: both;
@@ -202,7 +203,7 @@ nav {
       transform: translateY(100%);
   }
   to { opacity: 1 }
-}
+} */
 
 /* .title-container {
   position: absolute;

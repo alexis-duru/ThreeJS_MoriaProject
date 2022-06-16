@@ -71,7 +71,7 @@ export default class SceneBase {
             1,
             10000
         );
-        this.camera.position.set(0, 25, 200);
+        this.camera.position.set(0, 25, 170);
         this.cameraTarget = new Vector3(0, 50, 0);
         this.camera.lookAt(this.cameraTarget)
 

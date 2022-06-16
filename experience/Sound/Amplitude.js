@@ -1,4 +1,4 @@
-import Amplitude from 'Amplitudejs';
+import Amplitude from 'amplitudejs';
 
 Amplitude.init({
     songs: [
