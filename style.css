@@ -21,7 +21,7 @@ body {
   margin: 0;
   overflow: hidden;
   position: fixed;
-  /* cursor: none; */
+  cursor: none;
   z-index: 99999;
 }
 
@@ -38,6 +38,7 @@ body {
   opacity: 0.8;
   outline: none;
   flex-direction: column;
+  cursor: pointer;
 }
 
 #check input {

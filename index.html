@@ -11,19 +11,14 @@
 
     <div id="check">
       <p>Password:<input id="passwordBox" type="password"/></p>
-      <a onclick="return checkPassword();">
+      <a  onclick="return checkPassword(); play()">
         SPEAK FRIEND AND ENTER
        </a>
     </div>
     <div class="title-container">
-      <!-- <div class="title">
-        <p>WELCOME</p>
-        <button class="explore">explore</button>
-      </div> -->
     </div>
     <div class="door_text_wrapper">
-      <input id="link" class="cssanimation sequence fadeInBottom" type="button" value="SPEAK FRIEND AND ENTER" onclick="play()">
-      <!-- <a class="cssanimation sequence fadeInBottom">SPEAK FRIEND AND ENTER</a> -->
+      <input id="link" class="cssanimation sequence fadeInBottom" type="button" value="SPEAK FRIEND AND ENTER"  onclick="return stop()">
     </div>
 
     <nav class="menu">
@@ -43,15 +38,17 @@
     var link = document.getElementById("link");
 
     
-    function play() {
-      audio.play();
-    };
+    // function play() {
+    //   audio.play();
+    // };
 
     function checkPassword() {
       var password = document.getElementById("passwordBox");
       var passwordText = password.value;
+      
       if(passwordText === "bella") {
         document.getElementById("check").classList.add('remove');
+        audio.play();
         console.log('hello')
         return true;
       }
@@ -59,6 +56,10 @@
       return false;
    }
 
+   function stop() {
+    audio.pause();
+    audio.currentTime = 0;
+  }
 
 
 
