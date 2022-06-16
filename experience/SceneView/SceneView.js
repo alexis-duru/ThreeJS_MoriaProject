@@ -1,4 +1,4 @@
-import { HemisphereLight, DirectionalLight, Group } from 'three';
+import { HemisphereLight, DirectionalLight, Group, SpotLight } from 'three';
 
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
@@ -6,12 +6,14 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import Door from '../elements/Door.js';
 import Clouds from '../elements/Clouds.js';
 import Stars from '../elements/Stars';
-// import CameraManager from '../camera/CameraManager';
-// import CameraManager from '../camera/CameraManager.js';
+import CameraManager from '../camera/CameraManager.js';
 
 import SceneBase from './Scene/SceneBase';
 
+import TWEEN from '@tweenjs/tween.js';
+
 export default class SceneView extends SceneBase {
+
     // isReady = true;
     init() {
 
@@ -41,13 +43,16 @@ export default class SceneView extends SceneBase {
 
         this.addStars();
 
+        this.spotLight = new SpotLight(this.scene)
+
         this.camera.position.x = 3;
 
         // CREATION DU TABLEAU DE PLANETE
-
         this.camera.position.y = 1;
 
-        // this.cameraManager = new CameraManager(this.scene)
+        // CAMERA MANAGER
+        this.cameraManager = new CameraManager(this);
+
 
         // POSITION CAMERA
         this.isReady = true;
@@ -121,6 +126,10 @@ export default class SceneView extends SceneBase {
         }
 
         if(this.stars){
+        }
+
+        if(this.cameraManager){
+            this.cameraManager.update()
         }
     }
 

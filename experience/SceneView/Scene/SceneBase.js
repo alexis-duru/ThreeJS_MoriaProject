@@ -1,8 +1,6 @@
 import {
     AmbientLight,
     BoxGeometry,
-    Color,
-    GridHelper,
     Mesh,
     MeshBasicMaterial,
     PerspectiveCamera,
@@ -13,6 +11,7 @@ import {
 } from 'three';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import TWEEN from '@tweenjs/tween.js';
 
 export default class SceneBase {
     constructor () {

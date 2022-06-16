@@ -1,6 +1,7 @@
 import { Object3D, Mesh, MeshBasicMaterial, SphereGeometry, HemisphereLight, DirectionalLight, DirectionalLightHelper } from "three";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import DoorLight from '../Light/DoorLight';
+import TWEEN from '@tweenjs/tween.js';
 
 const SPEEDS = [0.01, 0.10];
 const POSITIONS = [-5, 5];
@@ -13,6 +14,7 @@ export default class Door {
 
         // PERMET D'INCREMENTER DE 1 MON COSINUS / SINUS
         this.tick = 0
+
         this.init()
     }
     
@@ -21,7 +23,7 @@ export default class Door {
         const loader = new GLTFLoader();
         
         loader.load('/assets/object/gltf/gothic/door.gltf', (gltf) => {
-            
+        
             this.model = gltf.scene
 
             this.movementDoor();
@@ -29,9 +31,10 @@ export default class Door {
             this.light = new DoorLight(this.scene, {
                 x: 0,
                 y: OFFSET_Y,
-                z: 0
+                z: 0,
             });
         });
+       
     }
     
     movementDoor() {
@@ -60,7 +63,4 @@ export default class Door {
             this.light.update();
         }
     }
-
-
-
 }

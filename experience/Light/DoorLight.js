@@ -1,4 +1,4 @@
-import { PointLight, Object3D, SphereGeometry, MeshBasicMaterial, Mesh, Clock } from "three";
+import { PointLight, SphereGeometry, MeshBasicMaterial, Mesh, Clock } from "three";
 
 export default class DoorLight {
     constructor(scene, center) {
