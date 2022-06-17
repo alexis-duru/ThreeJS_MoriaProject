@@ -7,10 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MORIA PROJECT</title>
   </head>
-
   <body>
 
     <div id="check">
+      <p id="letter_1">B</p>
+      <p id="letter_2">E</p>
+      <p id="letter_3">L</p>
+      <p id="letter_4">L</p>
+      <p id="letter_5">A</p>
       <p>Password:<input id="passwordBox" type="password"/></p>
       <div class="button-container">
         <span class="mask">SPEAK FRIEND AND ENTER</span>
@@ -42,7 +46,7 @@
       var password = document.getElementById("passwordBox");
       var passwordText = password.value;
       
-      if(passwordText === "bella") {
+      if(passwordText === "BELLA") {
         document.getElementById("check").classList.add('remove');
         audio.play();
         console.log('hello')

@@ -1,0 +1,89 @@
+nav {
+    z-index: 999;
+  }
+
+
+  .menu {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+    width: auto;
+    margin-bottom: 13px;
+    height: auto;
+    user-select: none;
+    counter-reset: menucounter;
+    color: white;
+    transform: scale(0.6);
+    font-family: 'annabelle';
+   }
+   
+   .menu-item {
+       position: relative;
+       text-transform: uppercase;
+       cursor: pointer;
+       color: white;
+      
+   }
+   
+   .menu-item::before {
+       counter-increment: menucounter;
+       content: counters(menucounter, '.', decimal-leading-zero);
+       position: absolute;
+       left: -35px;
+       top: 0;
+       font-size: 15px;
+       color: white;
+   }
+   
+   .menu-item-text {
+       pointer-events: none;
+       display: block;
+       line-height: 1;
+       position: relative;
+       font-size: 2rem;
+   }
+   
+   .menu-item > div:nth-child(1) span {
+       will-change: transform;
+       transform-style: preserve-3d;
+       transition: 0.5s;
+       transition-delay: calc(0.05s * var(--index));
+       transform-origin: bottom;
+       display: inline-block;
+   }
+   
+   .menu-item > div:nth-child(2) span {
+       will-change: transform;
+       transform-style: preserve-3d;
+       transition: 0.5s;
+       transition-delay: calc(0.05s * var(--index));
+       transform-origin: top;
+       display: inline-block;
+       transform: translate3d(0, 100%, 0) rotateX(-90deg);
+   }
+   
+   .menu-item:hover > div:nth-child(1) span {
+       transform: translate3d(0, -100%, 0) rotateX(-90deg);
+   
+   }
+   
+   .menu-item:hover > div:nth-child(2) span {
+       transform: translate3d(0, 0%, 0) rotateX(0deg); 
+   }
+   
+   span {
+       font-size: 2rem;
+   }
+  
+   .line span {
+    width: 173px;
+      height: 1px;
+      left: 30px;
+      top: 15px;
+      opacity: 0.8;
+      position: absolute;
+      margin: 10px;
+      z-index: 9999;
+      background: rgba(255, 255, 255, 0.372);
+   }
+  

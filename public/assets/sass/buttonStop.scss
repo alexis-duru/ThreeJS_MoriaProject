@@ -1,0 +1,29 @@
+.door_text_wrapper {
+    width: auto;
+    height: auto;
+    color: white;
+    z-index: 9999;
+    position: absolute;
+    font-family: 'elf2';
+    top: 18px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+   }
+  
+   .door_text_wrapper input {
+    cursor: pointer;
+    opacity: 0.2;
+    font-size: 13px;
+    transition: 0.3s ease-in-out;
+    border: 0px;
+    font-family: 'helvetica';
+    letter-spacing: 2px;
+    background: 0;
+    color: white;
+   }
+  
+   .door_text_wrapper input:hover {
+    opacity: 1;
+    cursor: pointer
+   }

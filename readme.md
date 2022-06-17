@@ -1,3 +1,5 @@
+# Load sass : sass public/assets/sass/style.scss style.css --watch --style compressed
+
 # Experience => Scene View
 
 `Scene view` : Permet de mettre en place le contrôle de la caméra, ajout de l'helper
@@ -7,10 +9,15 @@
 (!! Ne pas oublier de mettre de la lumière dans mon projet Three)
 
 Scene Base :
+
 Orbit control
+
 Renderer
+
 canvas : (balise html ou l'on dessigne pixel par pixel
+
 Scene : Groupe ou l'on met les éléments à l'intérieur
+
 Camera: Gestion de l'ouverture - de la distance
 
 # console : command + option + i
@@ -18,4 +25,6 @@ Camera: Gestion de l'ouverture - de la distance
 # deploiement netlify : dossier public à la racine avec les assets
 
 # scene.camera.position dans la console
+
+# mot de passe : bella
 
