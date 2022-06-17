@@ -240,15 +240,17 @@ nav {
   font-family: 'elf2';
   top: 18px;
   right: 30px;
+  display: flex;
+  flex-direction: column;
  }
 
  .door_text_wrapper input {
   cursor: pointer;
   opacity: 0.2;
-  font-size: 18px;
+  font-size: 13px;
   transition: 0.3s ease-in-out;
   border: 0px;
-  font-family: 'elf2';
+  font-family: 'helvetica';
   letter-spacing: 2px;
   background: 0;
   color: white;
@@ -256,7 +258,7 @@ nav {
 
  .door_text_wrapper input:hover {
   opacity: 1;
-  cursor:help
+  cursor: pointer
  }
 
  .button-container {
