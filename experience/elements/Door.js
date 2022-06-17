@@ -1,6 +1,7 @@
 import { Object3D, Mesh, MeshBasicMaterial, SphereGeometry, HemisphereLight, DirectionalLight, DirectionalLightHelper } from "three";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import DoorLight from '../Light/DoorLight';
+import gsap from 'gsap';
 
 const SPEEDS = [0.01, 0.10];
 const POSITIONS = [-5, 5];
@@ -60,6 +61,7 @@ export default class Door {
 
         if (this.light) {
             this.light.update();
+
         }
     }
 }
