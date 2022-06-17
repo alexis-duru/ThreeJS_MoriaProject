@@ -39,12 +39,17 @@
     </nav>
 
   <audio controls loop id="audio" src="/assets/sounds/trackbis.mp3"></audio>
+  <audio  id="failed" controls src="/assets/sounds/failed.wav"></audio>
+  <audio id="bella" controls onclick="play()" src="/assets/sounds/bella.wav"></audio>
 
 </body>
   <script defer type="module" src="/main.js"></script>
   <script>
     var audio = document.getElementById("audio");
     var link = document.getElementById("link");
+    var failed = document.getElementById("failed");
+    var enter = document.getElementById("bella");
+
 
     function checkPassword() {
       var password = document.getElementById("passwordBox");
@@ -55,10 +60,11 @@
         document.getElementById("check").classList.add('remove');
         document.getElementById("overlay-check").classList.add('remove')
         audio.play();
+        enter.play();
         console.log('hello')
         return true;
       }
-      alert("Access denied! Incorrect password!");
+      failed.play();
       return false;
    }
 
