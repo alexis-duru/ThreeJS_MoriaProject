@@ -1,4 +1,4 @@
-import { PointLight, SphereGeometry, MeshBasicMaterial, Mesh, Clock } from "three";
+import { PointLight, SphereGeometry, MeshBasicMaterial, Mesh } from "three";
 
 export default class DoorLight {
     constructor(scene, center) {
@@ -29,7 +29,7 @@ export default class DoorLight {
         });
     }
 
-    addLight({color = 0xffffff, intensity = 3, distance = 90}) {
+    addLight({color = 0xffffff, intensity = 3, distance = 400}) {
 
         // Création de la light
 

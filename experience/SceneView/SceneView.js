@@ -1,8 +1,4 @@
 import { HemisphereLight, DirectionalLight, Group, SpotLight } from 'three';
-
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-
-// import Planet from '../elements/Planet.js';
 import Door from '../elements/Door.js';
 import Clouds from '../elements/Clouds.js';
 import Stars from '../elements/Stars';
@@ -10,7 +6,6 @@ import CameraManager from '../camera/CameraManager.js';
 
 import SceneBase from './Scene/SceneBase';
 
-import TWEEN from '@tweenjs/tween.js';
 
 export default class SceneView extends SceneBase {
 
@@ -68,8 +63,6 @@ export default class SceneView extends SceneBase {
         hemiLight.groundColor.setHSL(0.095, 1, 0.75);
         hemiLight.position.set(0, 50, 0);
         this.scene.add(hemiLight);
-        // const hemiLightHelper = new HemisphereLightHelper( hemiLight, 10 );
-        // this.scene.add( hemiLightHelper );
 
         const dirLight = new DirectionalLight(0xffffff, 1);
         dirLight.color.setHSL(0.1, 1, 0.95);
@@ -92,8 +85,6 @@ export default class SceneView extends SceneBase {
         dirLight.shadow.camera.far = 3500;
         dirLight.shadow.bias = -0.0001;
 
-        // const dirLightHelper = new DirectionalLightHelper(dirLight, 10);
-        // this.scene.add(dirLightHelper);
     }
 
     addStars () {

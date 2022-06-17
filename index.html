@@ -9,18 +9,22 @@
   </head>
   <body>
 
+    <div id="overlay-check"></div>
     <div id="check">
       <p class="letter floating" id="letter1">B</p>
       <p class="letter floating" id="letter2">L</p>
       <p class="letter floating" id="letter3">E</p>
       <p class="letter floating" id="letter4">L</p>
       <p class="letter floating" id="letter5">A</p>
-      <p id="password">Password:<input id="passwordBox" type="password"/></p>
-      <div class="button-container">
-        <span class="mask">SPEAK FRIEND AND ENTER</span>
-        <button type="button" name="Hover" onclick="checkPassword(); play()">ENTER</button>
+      <div id="wrapper-password">
+        <p id="password">Password:<input id="passwordBox" type="password"/></p>
+        <div class="button-container">
+          <span class="mask">SPEAK FRIEND AND ENTER</span>
+          <button id="myButton" type="button" name="Hover" onclick="checkPassword(); play()">ENTER</button>
+        </div>
       </div>
     </div>
+
  
     <div class="door_text_wrapper">
       <input id="link" class="cssanimation sequence fadeInBottom" type="button" value="stop the sound"  onclick="return stop()">
@@ -34,7 +38,7 @@
       </a>
     </nav>
 
-  <audio id="audio" src="/assets/sounds/track.mp3"></audio>
+  <audio controls loop id="audio" src="/assets/sounds/trackbis.mp3"></audio>
 
 </body>
   <script defer type="module" src="/main.js"></script>
@@ -47,7 +51,9 @@
       var passwordText = password.value;
       
       if(passwordText === "BELLA") {
+        
         document.getElementById("check").classList.add('remove');
+        document.getElementById("overlay-check").classList.add('remove')
         audio.play();
         console.log('hello')
         return true;
@@ -55,6 +61,15 @@
       alert("Access denied! Incorrect password!");
       return false;
    }
+
+    var myButton=document.querySelector("#myButton");
+      document.body.addEventListener("keydown",function(){
+          var code=13; // 75 is keycode of 'k'
+          if(event.keyCode==code)
+          {
+              myButton.click();
+          }
+      });
 
    function stop() {
     audio.pause();

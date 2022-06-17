@@ -11,7 +11,6 @@ import {
 } from 'three';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import TWEEN from '@tweenjs/tween.js';
 import gsap from 'gsap'
 
 export default class SceneBase {

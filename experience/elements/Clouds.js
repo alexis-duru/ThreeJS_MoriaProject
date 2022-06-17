@@ -1,8 +1,7 @@
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-const SPEEDS = [0.05, 0.06];
-const POSITIONS = [-50, 50];
-
+const SPEEDS = [0.6, 0.7];
+const POSITIONS = [-10100, -1250];
 export default class Clouds {
     constructor(scene) {
         this.scene = scene;
@@ -32,9 +31,9 @@ export default class Clouds {
 
         const cloud = this.model.clone();
         this.scene.add(cloud);
-        cloud.scale.set(1, -1, 1.5);
+        cloud.scale.set(3, -1, 2);
         cloud.rotation.y = 50;
-        cloud.position.y = 30;
+        cloud.position.y = 35;
         cloud.position.x = POSITIONS[this.cloudsArray.length];
         this.cloudsArray.push(cloud);
     }
@@ -42,23 +41,23 @@ export default class Clouds {
     generateTopcloud() {
         const cloudTop = this.model.clone();
         this.scene.add(cloudTop);
-        cloudTop.scale.set(1, -1, 1.5);
+        cloudTop.scale.set(5, -1, 1.5);
         cloudTop.rotation.y = 50;
-        cloudTop.position.y = 200;
+        cloudTop.position.y = 300;
         cloudTop.position.x = POSITIONS[this.cloudsArrayTop.length];
         this.cloudsArrayTop.push(cloudTop);
     }
 
     update() {
         this.cloudsArray.forEach((cloud, i) => {
-            if(cloud.position.x > 100) {
+            if(cloud.position.x > 1070) {
                 cloud.position.x = POSITIONS[i]
             }
             cloud.position.x += SPEEDS[i]
         });
 
         this.cloudsArrayTop.forEach((cloudTop, i) => {
-            if(cloudTop.position.x > 100) {
+            if(cloudTop.position.x > 1070) {
                 cloudTop.position.x = POSITIONS[i]
             }
             cloudTop.position.x += SPEEDS[i]

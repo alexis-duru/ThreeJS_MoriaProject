@@ -1,7 +1,6 @@
 import { Object3D, Mesh, MeshBasicMaterial, SphereGeometry, HemisphereLight, DirectionalLight, DirectionalLightHelper } from "three";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import DoorLight from '../Light/DoorLight';
-import TWEEN from '@tweenjs/tween.js';
 
 const SPEEDS = [0.01, 0.10];
 const POSITIONS = [-5, 5];
@@ -56,8 +55,8 @@ export default class Door {
             return
         }
         this.tick += 1
-        const distance = 2
-        this.door.position.y = Math.sin(this.tick / 100) * distance + OFFSET_Y;
+        const distance = 5
+        this.door.position.y = Math.sin(this.tick / 60) * distance + OFFSET_Y;
 
         if (this.light) {
             this.light.update();
