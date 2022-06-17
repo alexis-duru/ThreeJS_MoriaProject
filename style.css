@@ -242,17 +242,6 @@ nav {
   right: 30px;
  }
 
- /* .door_text_wrapper a {
-  cursor: pointer;
-  opacity: 0.2;
-  font-size: 15px;
-  transition: 0.3s ease-in-out;
- }
-
- .door_text_wrapper a:hover {
-  opacity: 1;
- } */
-
  .door_text_wrapper input {
   cursor: pointer;
   opacity: 0.2;
@@ -265,54 +254,72 @@ nav {
   color: white;
  }
 
- /* .colorButton {
-  color: white;
-  font-size: 25px;
-  opacity: 1;
- } */
-
  .door_text_wrapper input:hover {
   opacity: 1;
   cursor:help
  }
 
-
-
-
-
-
- /* .cssanimation, .cssanimation span {
-  animation-duration: 10s;
-  animation-delay: 65s;
-  animation-fill-mode: both;
-}
-
-.cssanimation span { display: inline-block }
-
-.fadeInBottom { animation-name: fadeInBottom }
-@keyframes fadeInBottom {
-  from {
-      opacity: 0;
-      transform: translateY(100%);
-  }
-  to { opacity: 1 }
-} */
-
-/* .title-container {
-  position: absolute;
-  width: 250px;
+ .button-container {
+  position: relative;
+  width: 200px;
   height: 50px;
-  background-color: white;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  color: black;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  transition: 0.5s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.explore {
+.button-container button {
+  width: 101%;
+  height: 100%;
+  font-family: "helvetica";
+  font-size: 13px;
+  background: #fff;
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  border: none;
+  color: #000;
   cursor: pointer;
-  background-color: black;
-  color: white;
-  border: 0px;
-  padding: 20px;
-} */
+  animation: anim2 0.7s steps(22) forwards;
+}
+
+.button-container button:hover {
+  animation: anim1 0.7s steps(22) forwards;
+}
+
+.mask {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  width: 101%;
+  font-family: "helvetica";
+  font-weight: lighter;
+  font-size: 13px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+@keyframes anim1 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+@keyframes anim2 {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
